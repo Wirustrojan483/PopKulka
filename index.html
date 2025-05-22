@@ -89,13 +89,18 @@
             popSound.play();
 
             // Zmiana obrazka
-            if (popkul.src.includes("popkul.png")) {
+            popkul.src = "popkul2.png";
+            /*if (popkul.src.includes("popkul.png")) {
                 popkul.src = "popkul2.png";
             } else {
                 popkul.src = "popkul.png";
-            }
+            }*/
         });
 
+        popkul.addEventListener("mouseup", () => {
+            popkul.src = "popkul.png";
+        });
+        
         // Resetowanie licznika
         resetButton.addEventListener("click", () => {
             count = 0;
