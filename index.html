@@ -82,6 +82,9 @@
 
         popkul.addEventListener("click", () => {
             count++;
+            if (count == 100){
+                window.open("https://www.bing.com/...", "_blank");
+            }
             counter.textContent = count;
             localStorage.setItem("popkulCount", count);
 
