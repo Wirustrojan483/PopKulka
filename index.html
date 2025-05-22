@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>PopKul</title>
+    <title>PopKulka</title>
     <style>
         body {
             background-color: #222;
@@ -37,6 +37,21 @@
             font-size: 14px;
             color: #aaa;
         }
+
+        #reset {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #reset:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -47,37 +62,49 @@
 
     <div id="counter">0</div>
 
+    <button id="reset">Resetuj licznik</button>
+
     <audio id="popSound" src="cat-meow-14536.mp3"></audio>
 
     <footer>
-        
+        &copy; 2025 PopKulka Inc.
     </footer>
 
     <script>
-const popkul = document.getElementById("popkul");
-const counter = document.getElementById("counter");
-const popSound = document.getElementById("popSound");
+        const popkul = document.getElementById("popkul");
+        const counter = document.getElementById("counter");
+        const popSound = document.getElementById("popSound");
+        const resetButton = document.getElementById("reset");
 
-let count = 0;
+        // Pobierz zapisany wynik z localStorage lub ustaw na 0
+        let count = localStorage.getItem("popkulCount") ? parseInt(localStorage.getItem("popkulCount")) : 0;
+        counter.textContent = count;
 
-popkul.addEventListener("click", () => {
-    count++;
-    /*if (count == 100){
-        window.open("https://www.bing.com/...", "_blank");
-    }*/
-    counter.textContent = count;
-    popSound.currentTime = 0;
-    popSound.play();
-    
-    /*if (popkul.src.includes("popkul.png")) {
-        popkul.src = "popkul2.png";
-    } else {
-        popkul.src = "popkul.png";
-    }*/
-});
-        
+        popkul.addEventListener("click", () => {
+            count++;
+            counter.textContent = count;
+            localStorage.setItem("popkulCount", count);
+
+            popSound.currentTime = 0;
+            popSound.play();
+
+            // Zmiana obrazka
+            if (popkul.src.includes("popkul.png")) {
+                popkul.src = "popkul2.png";
+            } else {
+                popkul.src = "popkul.png";
+            }
+        });
+
+        // Resetowanie licznika
+        resetButton.addEventListener("click", () => {
+            count = 0;
+            counter.textContent = count;
+            localStorage.setItem("popkulCount", count);
         });
     </script>
 
 </body>
 </html>
+
+
