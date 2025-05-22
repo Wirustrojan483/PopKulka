@@ -65,6 +65,15 @@
             counter.textContent = count;
             popSound.currentTime = 0;
             popSound.play();
+            var img = document.getElementById("myImage");
+            if (img.src.includes("img1.jpg")) {
+            img.src = "img2.jpg";
+            }
+            else {
+            img.src = "img1.jpg";
+              }
+        
+        
         });
     </script>
 
