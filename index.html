@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>PopKul</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        #popkul {
+            width: 300px;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        #popkul:active {
+            transform: scale(0.9);
+        }
+
+        #counter {
+            font-size: 50px;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PopKul 🎉</h1>
+
+    <img id="popkul" src="popkul.png" alt="PopKul">
+
+    <div id="counter">0</div>
+
+    <audio id="popSound" src="pop.mp3"></audio>
+
+    <footer>
+        Wersja inspirowana PopCatem — Twoja edycja 🚀
+    </footer>
+
+    <script>
+        const popkul = document.getElementById("popkul");
+        const counter = document.getElementById("counter");
+        const popSound = document.getElementById("popSound");
+
+        let count = 0;
+
+        popkul.addEventListener("click", () => {
+            count++;
+            counter.textContent = count;
+            popSound.currentTime = 0;
+            popSound.play();
+        });
+    </script>
+
+</body>
+</html>
