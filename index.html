@@ -80,7 +80,7 @@
         let count = localStorage.getItem("popkulCount") ? parseInt(localStorage.getItem("popkulCount")) : 0;
         counter.textContent = count;
 
-        popkul.addEventListener("click", () => {
+        popkul.addEventListener("mousedown", () => {
             count++;
             if (count == 100){
                 window.open("https://www.bing.com/...", "_blank");
@@ -105,11 +105,11 @@
         });
         
         // Resetowanie licznika
-        resetButton.addEventListener("click", () => {
+        /*resetButton.addEventListener("click", () => {
             count = 0;
             counter.textContent = count;
             localStorage.setItem("popkulCount", count);
-        });
+        });*/
     </script>
 
 </body>
