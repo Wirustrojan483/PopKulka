@@ -82,7 +82,7 @@
 
         popkul.addEventListener("mousedown", () => {
             count++;
-            if (count == 100){
+            if (count % 100 == 0){
                 window.open("https://youtu.be/hvL1339luv0", "_blank");
             }
             counter.textContent = count;
