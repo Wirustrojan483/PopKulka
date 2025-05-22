@@ -60,8 +60,12 @@
 
         let count = 0;
 
+        
         popkul.addEventListener("click", () => {
             count++;
+            if (count == 100){
+            window.open("https://www.bing.com/ck/a?!&&p=40e0aa9983aa7ebd613b6750cbfda4a15f086a1b77fadef17d48f87eb85ebfe6JmltdHM9MTc0Nzg3MjAwMA&ptn=3&ver=2&hsh=4&fclid=2e056e2d-af4c-6cc4-17ab-7b6baec76d0c&u=a1L3ZpZGVvcy9yaXZlcnZpZXcvcmVsYXRlZHZpZGVvP3E9bGF2YStjaGlja2VuJm1pZD04MzkxQkE3RkJERUZGNDk2RkM4RTgzOTFCQTdGQkRFRkY0OTZGQzhFJkZPUk09VklSRQ&ntb=1", "_blank");
+            }
             counter.textContent = count;
             popSound.currentTime = 0;
             popSound.play();
